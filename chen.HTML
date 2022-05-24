@@ -2,24 +2,43 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>EXO-Chen</title>
         <link href="EXO.CSS" rel="stylesheet">
     </head>
-    <body>
-        <header></header>
-        <nav>
-            <ol>
-                <li><a href="index.HTML">Homepage</a></li>
-                <li><a href="TheMembers.HTML">The Members</a></li>
-                <li><a href="FormerMembers.HTML">Former Members</a></li>
-                <li><a href="Sub-units.HTML">Sub-Units</a></li>
-                <li><a href="Contacts.HTML">Contacts</a></li>
-            </ol>
+    <body id="other">
+        <header><!--vill ej att den ska synas-->
+            <p>EXO fanpage</p>
+        </header>
+        <nav class="dropdown" role="navigation">
+            <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny-->
+            <ul id="myDropdown" class="dropdown-content" role="list">
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="TheMembers.html">The Members</a></li>
+                <li><a href="FormerMembers.html">Former Members</a></li>
+                <li><a href="Sub-units.html">Sub-Units</a></li>
+                <li><a href="Contacts.html">Contacts</a></li>
+            </ul>
+            <!--Javascript till menyknappen-->
+            <script>
+              function myFunction(){
+                document.getElementById("myDropdown").classList.toggle("show");
+              }
+              window.onclick = function(event) {
+                if (!event.target.matches('.menuimg')) {
+                  var dropdowns = document.getElementsByClassName("dropdown-content");
+                  var i;
+                  for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                  }
+                }
+              }
+            </script>
         </nav>
-        <main>
+        <main role="main">
             <h1>Chen</h1>
             <img src="chen.jpg" alt="Chen">
-            <ul>
+            <ul role="list">
                 <li>Stage Name: Chen</li>
                 <li>Birth Name: Kim Jong Dae</li>
                 <li>Birthday/ Age: September 21, 1992/ 30 y/o</li>
@@ -30,20 +49,20 @@
             </ul>
             <h2>A popular song:</h2>
             <iframe src="https://www.youtube.com/embed/JrOrlhjIYVk"></iframe>
-            <dl>
+            <dl role="list">
                 <dt>Albums:</dt>
                 <dd><a href="https://www.youtube.com/watch?v=zc8XVS8ae_4">April And A Flower</a></dd>
                 <dd><a href="https://www.youtube.com/watch?v=gCbJJjhDp70">Dear My Dear</a></dd>
             </dl>
         </main>
-        <footer>
+        <footer role="contentinfo">
             <h3>EXO- Fanpage</h3>
             <p>Hello There! I hope you enjoy this page about EXO and thank you for visiting my website!</p>
             <h3>Useful Links</h3>
-            <ul>
+            <ol role="list">
                 <li><a href="https://kprofiles.com/exo-profile-facts/">Kprofiles</a></li>
                 <li><a href="https://www.youtube.com/channel/UCEf_Bc-KVd7onSeifS3py9g">SM youtube</a></li>
-            </ul>
+              </ol>
             <p>No copyrights! 2022 :)</p>
         </footer>
     </body>

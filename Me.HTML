@@ -1,31 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>EXO-Me</title>
-        <link href="EXO.CSS" rel="stylesheet">
-    </head>
-    <body>
-        <header></header>
-        <nav>
-            <ol>
-                <li><a href="index.HTML">Homepage</a></li>
-                <li><a href="TheMembers.HTML">The Members</a></li>
-                <li><a href="FormerMembers.HTML">Former Members</a></li>
-                <li><a href="Sub-units.HTML">Sub-Units</a></li>
-                <li><a href="Contacts.HTML">Contacts</a></li>
-            </ol>
-        </nav>
-        <main></main>
-        <footer>
-            <h3>EXO- Fanpage</h3>
-            <p>Hello There! I hope you enjoy this page about EXO and thank you for visiting my website!</p>
-            <h3>Useful Links</h3>
-            <ul>
-                <li><a href="https://kprofiles.com/exo-profile-facts/">Kprofiles</a></li>
-                <li><a href="https://www.youtube.com/channel/UCEf_Bc-KVd7onSeifS3py9g">SM youtube</a></li>
-            </ul>
-            <p>No copyrights! 2022 :)</p>
-        </footer>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EXO-Me</title>
+    <link href="EXO.CSS" rel="stylesheet">
+  </head>
+  <body id="other">
+    <header><!--vill ej att den ska synas-->
+      <p>EXO fanpage</p>
+    </header>
+    <nav class="dropdown" role="navigation">
+      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny-->
+      <ul id="myDropdown" class="dropdown-content" role="list">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="TheMembers.html">The Members</a></li>
+        <li><a href="FormerMembers.html">Former Members</a></li>
+        <li><a href="Sub-units.html">Sub-Units</a></li>
+        <li><a href="Contacts.html">Contacts</a></li>
+      </ul>
+      <!--Javascript till menyknappen-->
+      <script>
+        function myFunction(){
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+          if (!event.target.matches('.menuimg')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+            }
+          }
+        }
+      </script>
+    </nav>
+    <main role="main">
+      <h2>About me!</h2>
+      <p>Hello there! here is some information about me, the creator of this page</p>
+      <dl role="list">
+        <dt>My name</dt>
+        <dd>Ola Ahssino</dd>
+        <dt>My age</dt>
+        <dd>18 years old</dd>
+        <dt>Country</dt>
+        <dd>Sweden</dd>
+      </dl>
+      <p>Even though I really like everyone in this group, here are some of my favorites:</p>
+      <ol start="1" role="list">
+        <li>All of them</li>
+        <li>All of them</li>
+        <li>All of them</li>
+      </ol>
+      <form action="thanks.jpg" method="post" target="blank" role="form"><!--Visa bilden när man klickar på submit-->
+        <fieldset>
+          <legend>Quiz</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" pattern="[A-Za-z]{2}">
+          <label for="phone">Number:</label>
+          <input type="number" id="phone" name="phone-number">
+          <label for="pw">Password</label>
+          <input name="password" type="password" id="pw" placeholder="Password" required>
+          <label for="extra">Anything more?</label>
+          <textarea id="extra" name="extra">Write here</textarea>
+          <label for="like">Do you like my website?</label>
+          <input type="checkbox" id="like" name="like-me?" checked><!--rutan är bockad, meen det går att ändra om man vill-->
+          <label for="love">Do you love EXO?</label>
+          <input type="radio" id="love" name="love-EXO" required><!--rutan går inte att avmarkera efter att man har markerat den-->
+          <label for="color">Choose a color:</label>
+          <input type="color" id="color" name="color">
+          <label for="members">Choose a member:</label>
+          <select name="members" id="members">
+            <optgroup label="The member">
+              <option value="suho">Suho</option>
+              <option value="xiumin">Xiumin</option>
+              <option value="lay">Lay</option>
+              <option value="baekhyun">Baekhyun</option>
+              <option value="chen">Chen</option>
+              <option value="chanyeol">Chanyeol</option>
+              <option value="D.O.">D.O.</option>
+              <option value="kai" selected>Kai</option>
+              <option value="sehun">Sehun</option>
+              <option value="kris">Kris</option>
+              <option value="Luhan">Luhan</option>
+              <option value="tao">Tao</option>
+          </select>
+          <input type="submit" value="Submit">
+        </fieldset>
+      </form>
+    </main>
+    <footer role="contentinfo">
+      <h3>EXO- Fanpage</h3>
+      <p>Hello There! I hope you enjoy this page about EXO and thank you for visiting my website!</p>
+      <h3>Useful Links</h3>
+      <ol role="list">
+        <li><a href="https://kprofiles.com/exo-profile-facts/">Kprofiles</a></li>
+        <li><a href="https://www.youtube.com/channel/UCEf_Bc-KVd7onSeifS3py9g">SM youtube</a></li>
+      </ol>
+      <p>No copyrights! 2022 :)</p>
+    </footer>
+  </body>
 </html>

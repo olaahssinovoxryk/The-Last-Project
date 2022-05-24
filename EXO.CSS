@@ -1,8 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 body{
     background-color: rgb(228, 228, 228);
     color: rgb(20, 20, 20);
     text-align: center;
-    font-family:'Courier New', Courier, monospace;
     margin: 0;
     padding:0;
+    font-family: 'Macondo'; /*egen typsnitt*/
+}
+@media only screen and (max-width: 599px){/*(mobile first) för mobiler och plattformar under 600px*/
+    #index{/*grid for homepage*/
+        display: grid;
+        grid-template-rows: 1fr 3fr 1fr;
+        grid-template-columns: auto;}
+    #index nav{
+        grid-row: 1;}
+    #index main{
+        grid-row: 2;}
+    #index footer{
+        grid-row: 3;}
+    #sub-pages{/*grid för sub pages till homepage*/
+        display: grid;
+        grid-template-rows: 1fr 1fr 2fr 1fr;
+        grid-template-columns: auto;}
+    #sub-pages nav{
+        grid-row: 1;}
+    #sub-pages main{
+        grid-row: 2;}
+    #sub-pages section{
+        grid-row: 3;}
+    #sub-pages footer{
+        grid-row: 4;}
+    #other{/*grid till alla andra sidor jag inte orkar skriva mer grid till, för vissa kan main vara för stor*/
+        display: grid;
+        grid-template-rows: 1fr 3fr 1fr;
+        grid-template-columns: auto;}
+    #other nav{
+        grid-row: 1;}
+    #other main{
+        grid-row: 2;}
+    #other footer{
+        grid-row: 3;}
+    .menuimg{/*navigations meny, den med bild*/
+        background-image: url(menubarimg.png);
+        height: 28ex;
+        width: 28ex;
+        border: none;
+        cursor: pointer;} /*låt musen peka på menyn när man har musen över den*/
+    .menuimg:hover, .dropbtn:focus{
+        background-color: #b4b4b4;} /*byt färg för bilden när man har har musen över eller klickar på en kort stund*/ 
+    .dropdown{/*menyn*/
+        display: block;}
+    .dropdown-content{/*menylistan*/
+        display: none;
+        background-color: #b4b4b4;/*för bowsers som inte kan hantera gradienter*/
+        background-image: linear-gradient(gray, white);}
+    .dropdown li{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;}
+    .show{/*när den aktiveras med javascript ska menylistan visas*/
+        display: block;}
+}
+@media only screen and (min-width: 600px){/*för surfplattor och plattformar över 600px*/
+    #index{/*grid for homepages*/
+        display: grid;
+        grid-template-rows: 1fr 10fr 2fr;
+        grid-template-columns: 1fr}
+    #index nav{
+        grid-row: 1;
+        grid-column: 1;}
+    #index main{
+        grid-row: 2;
+        grid-column: 1;}
+    #index footer{
+        grid-row: 3;
+        grid-column: 1;}
+    #sub-pages{/*grid för sub pages till homepage*/
+        display: grid;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 1fr;}
+    #sub-pages nav{
+        grid-column: 1 / 3;
+        grid-row: 1;}
+    #sub-pages main{
+        grid-column: 1 / 2;
+        grid-row: 2;}
+    #sub-pages section{
+        grid-column: 2 / 3;
+        grid-row: 2;}
+    #sub-pages footer{
+        grid-column: 1 / 3;
+        grid-row: 3;}
+    #sub-con{/*grid for contacts*/
+        display: grid;
+        grid-template-rows: 1fr 2fr 3fr 1fr;
+        grid-template-columns: 1fr 1fr;}
+    #sub-con nav{
+        grid-column: 1 / 3;
+        grid-row: 1;}
+    #sub-con main{
+        grid-column: 1 / 2;
+        grid-row: 2;}
+    #sub-con section{
+        grid-column: 2 / 3;
+        grid-row: 2;}
+    #sub-con div{
+        grid-column: 1 / 3;
+        grid-row: 3;}
+    #sub-con footer{
+        grid-column: 1 / 3;
+        grid-row: 4;}
+    #other{/*grid till alla andra sidor jag inte orkar skriva mer grid till, för vissa kan main vara för stor*/
+        display: grid;
+        grid-template-rows: 1fr 10fr 2fr;
+        grid-template-columns: auto;}
+    #other nav{
+        grid-row: 1;}
+    #other main{
+        grid-row: 2;}
+    #other footer{
+        grid-row: 3;}
+    button{
+        display: none;/*bilden för menyn visas inte, listan visas fortfarande*/
+    }
+    .dropdown-content{
+        background-color: #b4b4b4;/*för bowsers som inte kan hantera gradienter*/
+        background-image: linear-gradient(gray, white);}
+}
+@media only screen and (min-width: 992px){/*för datorer och plattformar över 992px*/
+    #sub-con{/*grid for contacts*/
+        display: grid;
+        grid-template-rows: 1fr 3fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;}
+    #sub-con nav{
+        grid-column: 1 / 4;
+        grid-row: 1;}
+    #sub-con main{
+        grid-column: 1 / 2;
+        grid-row: 2;}
+    #sub-con section{
+        grid-column: 2 / 3;
+        grid-row: 2;}
+    #sub-con div{
+        grid-column: 3 / 4;
+        grid-row: 2;}
+    #sub-con footer{
+        grid-column: 1 / 4;
+        grid-row: 3;}
+    nav li{
+        display: inline-table; /*listpunkterna i menyn ska stå bredvid varandra. ville göra det med knappar men PHP krävs så jag hoppade över det*/
+        padding: 9px}
+    .dropdown-content{
+        padding: 10px;
+        height: 2rem;}
+    footer:hover{
+        transform: scale(1.5);} /*förstora footern när man har musen över den, få den att bli 1,5 gånger så stor*/
+}
+img, video, iframe{/*Youtube videoerna kan se lite för breda ut, men jag tycker inte att det är så farligt*/
+    width: 70vw;
+    height: auto;}
+.WCAG20{
+    width: 50px;
+}
+footer{
+    border: solid 2px;
+    background-color: #b4b4b4;/*för bowsers som inte kan hantera gradienter*/
+    background-image: linear-gradient(gray, white);
+    border-radius: 25em;
+    transform: scaleY(0.9); /*satt storlek*/
+    transition: 2s; /*tar 2 sekunder att förstora*/
+}
+header{/*för en osynlig header då jag inte behöver den, men måste ändå ha med den*/
+    display: none;
+}
+table, th, td{/*tabell*/
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+tr:nth-child(odd){ /*udda rader ska ha en annan färg*/
+    background-color: darkgray;
+}
+thead th{
+    background-color: rgb(228, 228, 228);
+}
+svg{/*egen css svg bild som ska föreställa reklam*/
+    width: 300px;
+    height: 500px;
+}
+svg > rect{ /*hur rektangeln ska se ut*/
+    fill: rgb(255, 255, 255);
+    stroke: hsla(0, 0%, 0%, 0.753);
+    stroke-width: 0.5em;
+}
+rect ~ text{
+    text-anchor: middle;
+}
+.animation{/*animation, en boll*/
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    position: relative;
+    animation-name: greeting;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;/*ska fortsätta spela*/
+    border-radius: 50%;
+    margin: 100px;
+    color: transparent;
+}
+@keyframes greeting{ /*bollen går runt i en rektangel*/
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:100px; top:0px;}
+    50%  {background-color:green ;left:100px; top:100px;}
+    75%  {background-color: blue; left:0px; top:100px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+input, label{/*formulär*/
+    margin: 10px;
+    margin-top: 10px;
+    position:relative;
+}
+input:checked{
+    box-shadow: 0 0 0  3px hotpink;
+}
+textarea{
+    resize: both; /*förstora eller förmiska rutan på båda hållen*/
+    overflow: auto;
+}
+a:link{/*LoVE Focus Hate*/
+    color: #000000;
+}
+a:visited{
+    color: hsl(0, 1%, 14%);
+}
+a:focus, a:hover{
+    color:rgb(52, 52, 199);
+}
+a:active{
+    color: #b63a3a;
+}
+a{/*länkar*/
+    text-decoration: none;
+}
+:target{/*när en ID är targeted så blir rutan på idn vit*/
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+}
+dt::after{/*lista*/
+    content: "(real)";
+    opacity: 50%;
 }
