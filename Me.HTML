@@ -56,17 +56,17 @@
         <fieldset>
           <legend>Quiz</legend>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" pattern="[A-Za-z]{2}">
+          <input type="text" id="name" name="name" pattern="[A-Za-z]{2-20}"><br>
           <label for="phone">Number:</label>
-          <input type="number" id="phone" name="phone-number">
+          <input type="number" id="phone" name="phone-number"><br>
           <label for="pw">Password</label>
-          <input name="password" type="password" id="pw" placeholder="Password" required>
+          <input name="password" type="password" id="pw" placeholder="Password" required><br>
           <label for="extra">Anything more?</label>
-          <textarea id="extra" name="extra">Write here</textarea>
+          <textarea id="extra" name="extra">Write here</textarea><br>
           <label for="like">Do you like my website?</label>
           <input type="checkbox" id="like" name="like-me?" checked><!--rutan är bockad, meen det går att ändra om man vill-->
           <label for="love">Do you love EXO?</label>
-          <input type="radio" id="love" name="love-EXO" required><!--rutan går inte att avmarkera efter att man har markerat den-->
+          <input type="radio" id="love" name="love-EXO" required><br><!--rutan går inte att avmarkera efter att man har markerat den-->
           <label for="color">Choose a color:</label>
           <input type="color" id="color" name="color">
           <label for="members">Choose a member:</label>
@@ -84,7 +84,7 @@
               <option value="kris">Kris</option>
               <option value="Luhan">Luhan</option>
               <option value="tao">Tao</option>
-          </select>
+          </select><br>
           <input type="submit" value="Submit">
         </fieldset>
       </form>
