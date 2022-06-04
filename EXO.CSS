@@ -149,7 +149,7 @@ body{
         grid-column: 1 / 4;
         grid-row: 3;}
     nav li{
-        display: inline-table; /*listpunkterna i menyn ska stå bredvid varandra. ville göra det med knappar men PHP krävs så jag hoppade över det*/
+        display:inline-block; /*blocken ska visas*/
         padding: 9px}
     .dropdown-content{
         padding: 10px;
@@ -179,7 +179,7 @@ table, th, td{/*tabell*/
     border-collapse: collapse;
     padding: 10px;
 }
-tr:nth-child(odd){ /*udda rader ska ha en annan färg*/
+tr:nth-child(odd){ /*udda rader ska ha en annan färg, zebra stripping*/
     background-color: darkgray;
 }
 thead th{
@@ -223,6 +223,11 @@ input, label{/*formulär*/
 }
 input:checked{
     box-shadow: 0 0 0  3px hotpink;
+}
+fieldset{ /*används för att ställa upp formuläret istället för <br>*/
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
 }
 textarea{
     resize: both; /*förstora eller förmiska rutan på båda hållen*/

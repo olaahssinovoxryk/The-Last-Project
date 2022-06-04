@@ -2,38 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EXO-Kai</title>
     <link href="EXO.CSS" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body id="other">
+  <body id="other"><!--id för grid-->
     <header><!--vill ej att den ska synas-->
       <p>EXO fanpage</p>
     </header>
-    <nav class="dropdown" role="navigation">
-      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny-->
-      <ul id="myDropdown" class="dropdown-content" role="list">
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="TheMembers.html">The Members</a></li>
-        <li><a href="FormerMembers.html">Former Members</a></li>
-        <li><a href="Sub-units.html">Sub-Units</a></li>
-        <li><a href="Contacts.html">Contacts</a></li>
+    <nav class="dropdown" role="navigation"><!--dropdown är class för hela meny, avänds för att göra menyn till en ruta, samt till javascript-->
+      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny, class för menybilden som visas för skärmar 599 eller mindre i bredd-->
+      <ul id="myDropdown" class="dropdown-content" role="list"><!--klassen är för att ändra utseendet för listan till menyn-->
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="TheMembers.html">The Members</a></li>
+          <li><a href="Sub-units.html">Sub-Units</a></li>
+          <li><a href="Contacts.html">Contacts</a></li>
       </ul>
-      <!--Javascript till menyknappen-->
-      <script>
-        function myFunction(){
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-          if (!event.target.matches('.menuimg')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-            }
-          }
-       }
-      </script>
     </nav>
     <main role="main">
       <h1>Kai</h1>
@@ -65,5 +49,19 @@
       </ul>
       <p>No copyrights! 2022 :)</p>
     </footer>
+    <!--javascript till meny för att ,´man ska kunna klicka på menybilden och få upp menyn på skärmar 599 eller mindre i bredd-->
+    <script>
+      function myFunction(){
+        document.getElementById("myDropdown").classList.toggle("show");}
+        window.onclick = function(event){
+          if (!event.target.matches('.menuimg')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++){
+              var openDropdown = dropdowns[i];
+            }
+          }
+        }
+    </script>
   </body>
 </html>

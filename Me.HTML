@@ -2,41 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EXO-Me</title>
     <link href="EXO.CSS" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body id="other">
+  <body id="other"><!--id för grid-->
     <header><!--vill ej att den ska synas-->
       <p>EXO fanpage</p>
     </header>
-    <nav class="dropdown" role="navigation">
-      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny-->
-      <ul id="myDropdown" class="dropdown-content" role="list">
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="TheMembers.html">The Members</a></li>
-        <li><a href="FormerMembers.html">Former Members</a></li>
-        <li><a href="Sub-units.html">Sub-Units</a></li>
-        <li><a href="Contacts.html">Contacts</a></li>
+    <nav class="dropdown" role="navigation"><!--dropdown är class för hela meny, avänds för att göra menyn till en ruta, samt till javascript-->
+      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny, class för menybilden som visas för skärmar 599 eller mindre i bredd-->
+      <ul id="myDropdown" class="dropdown-content" role="list"><!--klassen är för att ändra utseendet för listan till menyn-->
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="TheMembers.html">The Members</a></li>
+          <li><a href="Sub-units.html">Sub-Units</a></li>
+          <li><a href="Contacts.html">Contacts</a></li>
       </ul>
-      <!--Javascript till menyknappen-->
-      <script>
-        function myFunction(){
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-          if (!event.target.matches('.menuimg')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-            }
-          }
-        }
-      </script>
     </nav>
     <main role="main">
-      <h2>About me!</h2>
+      <h1>About me!</h1>
       <p>Hello there! here is some information about me, the creator of this page</p>
       <dl role="list">
         <dt>My name</dt>
@@ -53,22 +37,22 @@
         <li>All of them</li>
       </ol>
       <form action="thanks.jpg" method="post" target="blank" role="form"><!--Visa bilden när man klickar på submit-->
-        <fieldset>
+        <fieldset><!--alla id markerar vilken label de tillhör. ex. for= name i label tillhör id= name i input-->
           <legend>Quiz</legend>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" pattern="[A-Za-z]{2-20}"><br>
+          <input type="text" id="name" name="name" pattern="[A-Za-z]{2-20}">
           <label for="phone">Number:</label>
-          <input type="number" id="phone" name="phone-number"><br>
+          <input type="number" id="phone" name="phone-number">
           <label for="pw">Password</label>
-          <input name="password" type="password" id="pw" placeholder="Password" required><br>
+          <input name="password" type="password" id="pw" placeholder="Password" required>
           <label for="extra">Anything more?</label>
-          <textarea id="extra" name="extra">Write here</textarea><br>
+          <textarea id="extra" name="extra">Write here</textarea>
           <label for="like">Do you like my website?</label>
-          <input type="checkbox" id="like" name="like-me?" checked><!--rutan är bockad, meen det går att ändra om man vill-->
+          <input type="checkbox" id="like" name="like-me?" value="yes!" checked><!--rutan är bockad, meen det går att ändra om man vill-->
           <label for="love">Do you love EXO?</label>
-          <input type="radio" id="love" name="love-EXO" required><!--rutan går inte att avmarkera efter att man har markerat den-->
-          <label for="love">You answered yes right? hehe</label>
-          <input type="radio" id="love" name="love-EXO"><br>
+          <input type="radio" id="love" name="love-EXO" value="yes!" required><!--rutan går inte att avmarkera efter att man har markerat den-->
+          <label for="yes">You answered yes right? hehe</label>
+          <input type="radio" id="yes" name="yes" value="yes!">
           <label for="color">Choose a color:</label>
           <input type="color" id="color" name="color">
           <label for="members">Choose a member:</label>
@@ -101,5 +85,19 @@
       </ul>
       <p>No copyrights! 2022 :)</p>
     </footer>
+    <!--javascript till meny för att ,´man ska kunna klicka på menybilden och få upp menyn på skärmar 599 eller mindre i bredd-->
+    <script>
+      function myFunction(){
+        document.getElementById("myDropdown").classList.toggle("show");}
+        window.onclick = function(event){
+          if (!event.target.matches('.menuimg')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++){
+              var openDropdown = dropdowns[i];
+            }
+          }
+        }
+    </script>
   </body>
 </html>

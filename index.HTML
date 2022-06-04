@@ -2,50 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EXO-Homepage</title>
     <link href="EXO.CSS" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body id="index"><!--id för grid-->
     <header><!--vill ej att den ska synas-->
       <p>EXO fanpage</p>
     </header>
-    <nav class="dropdown" role="navigation">
-      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny-->
-      <ul id="myDropdown" class="dropdown-content" role="list">
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="TheMembers.html">The Members</a></li>
-        <li><a href="FormerMembers.html">Former Members</a></li>
-        <li><a href="Sub-units.html">Sub-Units</a></li>
-        <li><a href="Contacts.html">Contacts</a></li>
+    <nav class="dropdown" role="navigation"><!--dropdown är class för hela meny, avänds för att göra menyn till en ruta, samt till javascript-->
+      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny, class för menybilden som visas för skärmar 599 eller mindre i bredd-->
+      <ul id="myDropdown" class="dropdown-content" role="list"><!--klassen är för att ändra utseendet för listan till menyn-->
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="TheMembers.html">The Members</a></li>
+          <li><a href="Sub-units.html">Sub-Units</a></li>
+          <li><a href="Contacts.html">Contacts</a></li>
       </ul>
-      <!--Javascript till menyknappen-->
-      <script>
-        function myFunction(){
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-          if (!event.target.matches('.menuimg')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-            }
-          }
-        }
-      </script>
     </nav>
     <main role="main">
       <h1>EXO</h1>
       <img src="9OTblackandwhite.jpg" alt="The 9 members of EXO">
-      <p>EXO is the name of a popular South Korean-Chinese boy band. The band debuted on April 8, 2012 under SM Entertainment and consisted the of 12 members.
-        <br>The band does currently consists of 9 members: Suho, Xiumin, Lay, Baekhyun, Chen, Chanyeol, D.O., Kai and Sehun. The former members are Kris, Tao and Luhan.
-        <br>The official name of the fandom is EXO-L and their color is Cosmic Latte.
-      </p>
+      <p>EXO is the name of a popular South Korean-Chinese boy band. The band debuted on April 8, 2012 under SM Entertainment and consisted the of 12 members. The band does currently consists of 9 members: Suho, Xiumin, Lay, Baekhyun, Chen, Chanyeol, D.O., Kai and Sehun. The former members are Kris, Tao and Luhan. The official name of the fandom is EXO-L and their color is Cosmic Latte.</p>
       <h2>EXO's latest song:</h2>
       <video controls><!--HTML5 video-->
         <source src="donotfightthefeelingMV.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
+        Your browser does not support HTML5 video.<!--behövs där html5 videos inte spelas. fick av läraren-->
       </video>
     </main>
     <footer role="contentinfo">
@@ -58,5 +39,19 @@
       </ul>
       <p>No copyrights! 2022 :)</p>
     </footer>
+    <!--javascript till meny för att ,´man ska kunna klicka på menybilden och få upp menyn på skärmar 599 eller mindre i bredd-->
+    <script>
+      function myFunction(){
+        document.getElementById("myDropdown").classList.toggle("show");}
+        window.onclick = function(event){
+          if (!event.target.matches('.menuimg')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++){
+              var openDropdown = dropdowns[i];
+            }
+          }
+        }
+    </script>
   </body>
 </html>

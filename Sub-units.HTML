@@ -2,54 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EXO-Sub-units</title>
     <link href="EXO.CSS" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body id="sub-pages">
+  <body id="sub-pages"><!--id för grid-->
     <header><!--vill ej att den ska synas-->
       <p>EXO fanpage</p>
     </header>
-    <nav class="dropdown" role="navigation">
-      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny-->
-      <ul id="myDropdown" class="dropdown-content" role="list">
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="TheMembers.html">The Members</a></li>
-        <li><a href="FormerMembers.html">Former Members</a></li>
-        <li><a href="Sub-units.html">Sub-Units</a></li>
-        <li><a href="Contacts.html">Contacts</a></li>
+    <nav class="dropdown" role="navigation"><!--dropdown är class för hela meny, avänds för att göra menyn till en ruta, samt till javascript-->
+      <button role="button" onclick="myFunction()" class="menuimg"></button><!--Knapp till meny, class för menybilden som visas för skärmar 599 eller mindre i bredd-->
+      <ul id="myDropdown" class="dropdown-content" role="list"><!--klassen är för att ändra utseendet för listan till menyn-->
+          <li><a href="index.html">Homepage</a></li>
+          <li><a href="TheMembers.html">The Members</a></li>
+          <li><a href="Sub-units.html">Sub-Units</a></li>
+          <li><a href="Contacts.html">Contacts</a></li>
       </ul>
-      <!--Javascript till menyknappen-->
-      <script>
-        function myFunction(){
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-          if (!event.target.matches('.menuimg')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-            }
-          }
-        }
-      </script>
     </nav>
     <main role="main">
-      <h2>Please choose which sub-unit:</h2>
+      <h1>Please choose which sub-unit:</h1>
       <ul role="list"><!--lokalmeny-->
         <li><a href="EXO-K.html">EXO-K</a></li>
-        <li><a href="EXO-M.html">EXO-M</a></li>
-        <li><a href="CBX.html">EXO-CBX</a></li>
-        <li><a href="EXO-SC.html">EXO-SC</a></li>
-        <li><a href="EXO-VOCAL-LINE.html">EXO Vocal Line</a></li>
       </ul>
     </main>
-    <section>
+    <section><!--vill gärna inte ha någon h2-h6 här-->
       <svg><!--Plats för reklam-->
         <rect x="20" y="10" rx="25" ry="25" width="200px" height="400px"/><!--width och height måste vara med här annars blir det error i validatorn-->
         <text x="50%" y="50%">ADS</text>    
-        Sorry, your browser does not support inline SVG.<!--validator: error. Men texten behövs för browsers som inte kan hantera svg-->
+        Sorry, your browser does not support inline SVG.<!--validator: error. Men texten behövs för browsers som inte kan hantera svg. Jag fick det av läraren :)-->
       </svg>
     </section>
     <footer role="contentinfo">
@@ -62,5 +42,19 @@
       </ul>
       <p>No copyrights! 2022 :)</p>
     </footer>
+    <!--javascript till meny för att ,´man ska kunna klicka på menybilden och få upp menyn på skärmar 599 eller mindre i bredd-->
+    <script>
+      function myFunction(){
+        document.getElementById("myDropdown").classList.toggle("show");}
+        window.onclick = function(event){
+          if (!event.target.matches('.menuimg')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++){
+              var openDropdown = dropdowns[i];
+            }
+          }
+        }
+    </script>
   </body>
 </html>
